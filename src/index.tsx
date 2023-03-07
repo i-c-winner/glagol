@@ -10,7 +10,8 @@ import {
 } from 'react-router-dom'
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-
+import { ThemeProvider } from "@mui/material";
+import theme from "./UI/theme/createTheme";
 const router = createBrowserRouter([
   {
     path: '/',
@@ -28,9 +29,11 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <Provider store={store} >
-      <RouterProvider router={router}/>
-    </Provider>
+    <ThemeProvider theme={theme}>
+      <Provider store={store} >
+        <RouterProvider router={router}/>
+      </Provider>
+    </ThemeProvider>
   </React.StrictMode>
 );
 
