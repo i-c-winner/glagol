@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import store from './store/store'
+import {Provider} from "react-redux";
 import StartPage from "./pages/StartPage";
 import Room from "./pages/Room";
 import {
@@ -8,14 +10,15 @@ import {
 } from 'react-router-dom'
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-const router=createBrowserRouter([
+
+const router = createBrowserRouter([
   {
     path: '/',
-    element: <StartPage />
+    element: <StartPage/>
   },
   {
     path: '/room',
-    element: <Room />
+    element: <Room/>
   }
 ])
 
@@ -25,7 +28,9 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <Provider store={store} >
+      <RouterProvider router={router}/>
+    </Provider>
   </React.StrictMode>
 );
 
