@@ -1,13 +1,25 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
+import { useRef } from "react";
 
 interface Props {
   label: string
 }
 
+
 export default function BasicTextFields(props: Props) {
-  const {label} = props
+  const [roomName, setRoomName]=React.useState(getRoomName)
+
+  function getRoomName(){
+    return 'URL'
+  }
+
+  function changeRoomName(event: any) {
+    setRoomName(event.target.value)
+  }
+  const inputRefLogin = React.createRef()
+
   return (
     <Box
       component="form"
@@ -17,7 +29,8 @@ export default function BasicTextFields(props: Props) {
       noValidate
       autoComplete="off"
     >
-      <TextField id="outlined-basic" label={ label } variant="outlined"/>
+      <TextField id="outlined-basic" label='Login' variant="outlined"/>
+      <TextField id="outlined-basic" label='Room' variant="outlined" onChange={changeRoomName} value={roomName} inputRef={ inputRefLogin }/>
     </Box>
   );
 }
