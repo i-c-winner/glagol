@@ -5,7 +5,7 @@ function Room () {
   return (
     <div className='Room'>
       <p>This is Room Component</p>
-      <Loginin />
+      {true?<Loginin />:null}
     </div>
 
   )

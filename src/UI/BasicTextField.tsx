@@ -12,15 +12,13 @@ export default function BasicTextFields() {
   const [ roomName, setRoomName ] = useState(selector.roomName)
   const [loginUser, setLoginUser]= useState('')
 
-
-  function newRoomName(event: any) {
+    function newRoomName(event:  React.ChangeEvent<HTMLInputElement>) {
     setRoomName(event.target.value)
-    dispatch(changeRoomName({roomName: event.target.value}))
+    dispatch(changeRoomName(event.target.value))
   }
-
-  function newLoginUser(event: any) {
+  function newLoginUser(event:  React.ChangeEvent<HTMLInputElement>) {
     setLoginUser(event.target.value)
-    dispatch((changeLoginUser({loginUser: event.target.value})))
+    dispatch(changeLoginUser(event.target.value))
   }
 
   return (
