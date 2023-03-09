@@ -1,7 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit'
-import  conferenceSlice  from "./ConferenceSlice";
+import  roomSlice  from "./RoomSlice";
+import conferenceSlice from "./conferenceSlice";
 export default configureStore({
   reducer: {
+    room: roomSlice,
     conference: conferenceSlice
   },
 })
