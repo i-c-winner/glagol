@@ -6,7 +6,7 @@ import { Typography } from "@mui/material";
 function Loginin(){
  return  <div className="loginin">
     <BasicTextFields />
-    <Button variant="contained" color='primary'><Typography>Loginin</Typography></Button>
+    <Button variant="contained"  color='primary'><Typography>Loginin</Typography></Button>
   </div>
 }
 
