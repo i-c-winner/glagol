@@ -13,7 +13,6 @@ const conferenceSlice= createSlice({
   initialState,
   reducers: {
     changeConnected: (state) => {
-      debugger
       state.connected= !state.connected
     }
   }

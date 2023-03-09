@@ -5,9 +5,10 @@ import { Typography } from "@mui/material";
 import { useSelector, useDispatch } from "react-redux";
 import { Room } from "../../store/RoomSlice";
 import { changeConnected } from "../../store/conferenceSlice";
+import { Link } from 'react-router-dom'
 
 function Loginin() {
-  const dispatch=useDispatch()
+  const dispatch = useDispatch()
   const state: Room = useSelector((state: any) => state.room)
   const {loginUser, roomName} = state
 
@@ -18,7 +19,9 @@ function Loginin() {
 
   return <div className="loginin">
     <BasicTextFields/>
-    <Button variant="contained" onClick={ initApp } color='primary'><Typography>Loginin</Typography></Button>
+    <Link to="/sdafddsafdasff">
+      <Button variant="contained" onClick={ initApp } color='primary'><Typography>Loginin</Typography></Button>
+    </Link>
   </div>
 }
 
