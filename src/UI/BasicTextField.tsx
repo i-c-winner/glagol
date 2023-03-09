@@ -3,16 +3,15 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import { useRef } from "react";
 
-interface Props {
-  label: string
-}
 
 
-export default function BasicTextFields(props: Props) {
+
+export default function BasicTextFields() {
   const [roomName, setRoomName]=React.useState(getRoomName)
 
   function getRoomName(){
-    return 'URL'
+console.log(window.location)
+    return window.location.pathname.split('/')[1]
   }
 
   function changeRoomName(event: any) {

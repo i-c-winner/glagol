@@ -1,8 +1,13 @@
 import React from 'react'
+import Loginin from "../components/loginin/Loginin";
 
 function Room () {
   return (
-    <p>Room</p>
+    <div className='Room'>
+      <Loginin />
+      <p>Room</p>
+    </div>
+
   )
 }
 
