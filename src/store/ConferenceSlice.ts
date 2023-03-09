@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 const conferenceSlice = createSlice({
   name: 'conference',
@@ -7,11 +7,11 @@ const conferenceSlice = createSlice({
     roomName: window.location.pathname.split('/')[1]
   },
   reducers: {
-    changeLoginUser: (state, actyon) => {
-      state.loginUser=actyon.payload.loginUser
+    changeLoginUser: (state, action) => {
+      state.loginUser=action.payload.loginUser
     },
-    changeRoomName: (state, actyon) => {
-      state.roomName=actyon.payload.roonName
+    changeRoomName: (state, action) => {
+      state.roomName=action.payload.roomName
     },
   },
 })

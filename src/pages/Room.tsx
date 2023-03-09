@@ -4,8 +4,8 @@ import Loginin from "../components/loginin/Loginin";
 function Room () {
   return (
     <div className='Room'>
+      <p>This is Room Component</p>
       <Loginin />
-      <p>Room</p>
     </div>
 
   )

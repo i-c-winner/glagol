@@ -1,19 +1,27 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
+import { useDispatch, useSelector } from "react-redux";
+import { useState } from "react";
+import { changeLoginUser, changeRoomName } from "../store/ConferenceSlice";
+
 
 export default function BasicTextFields() {
-  const [roomName, setRoomName]=React.useState(getRoomName)
+  const selector = useSelector((state: any) => state.conference)
+  const dispatch = useDispatch()
+  const [ roomName, setRoomName ] = useState(selector.roomName)
+  const [loginUser, setLoginUser]= useState('')
 
-  function getRoomName(){
-console.log(window.location)
-    return window.location.pathname.split('/')[1]
-  }
 
-  function changeRoomName(event: any) {
+  function newRoomName(event: any) {
     setRoomName(event.target.value)
+    dispatch(changeRoomName({roomName: event.target.value}))
   }
-  const inputRefLogin = React.createRef()
+
+  function newLoginUser(event: any) {
+    setLoginUser(event.target.value)
+    dispatch((changeLoginUser({loginUser: event.target.value})))
+  }
 
   return (
     <Box
@@ -24,8 +32,9 @@ console.log(window.location)
       noValidate
       autoComplete="off"
     >
-      <TextField id="outlined-basic" label='Login' variant="outlined"/>
-      <TextField id="outlined-basic" label='Room' variant="outlined" onChange={changeRoomName} value={roomName} inputRef={ inputRefLogin }/>
+      <TextField id="outlined-basic" label='Login' value={loginUser} onChange={newLoginUser} variant="outlined"/>
+      <TextField id="outlined-basic" label='Room' variant="outlined" onChange={ newRoomName } value={ roomName }
+      />
     </Box>
   );
 }

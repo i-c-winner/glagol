@@ -7,7 +7,11 @@ function StartPage () {
    console.log('clcik')
  }
   return (
-<Loginin />
+    <div className='startPage'>
+      <p>this is startPage Component</p>
+      <Loginin />
+    </div>
+
   )
 }
 
