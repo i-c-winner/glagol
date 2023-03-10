@@ -4,7 +4,6 @@ import Loginin from "../components/loginin/Loginin";
 function StartPage () {
   const refRoom=React.createRef()
  function clickButton() {
-   console.log('clcik')
  }
   return (
     <div className='startPage'>
