@@ -3,10 +3,10 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
-import { changeLoginUser, changeRoomName } from "../store/RoomSlice";
+import { changeLoginUser, changeRoomName } from "../../store/RoomSlice";
 
 
-export default function BasicTextFields() {
+export default function LoginsForm() {
   const selector = useSelector((state: any) => state.room)
   const dispatch = useDispatch()
   const [ roomName, setRoomName ] = useState(selector.roomName)

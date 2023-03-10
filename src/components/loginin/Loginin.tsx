@@ -1,5 +1,5 @@
 import React from "react";
-import BasicTextFields from "../../UI/BasicTextField";
+import LoginsForm from "./LoginsForm";
 import { Button } from "@mui/material";
 import { Typography } from "@mui/material";
 import { useSelector, useDispatch } from "react-redux";
@@ -18,7 +18,7 @@ function Loginin() {
   }
 
   return <div className="loginin">
-    <BasicTextFields/>
+    <LoginsForm/>
     <Link to="/sdafddsafdasff">
       <Button variant="contained" onClick={ initApp } color='primary'><Typography>Loginin</Typography></Button>
     </Link>
