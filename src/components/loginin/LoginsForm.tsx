@@ -7,15 +7,10 @@ import { changeLoginUser, changeRoomName } from "../../store/RoomSlice";
 
 
 export default function LoginsForm() {
-  const selector = useSelector((state: any) => state.room)
   const dispatch = useDispatch()
-  const [ roomName, setRoomName ] = useState(selector.roomName)
   const [loginUser, setLoginUser]= useState('')
 
-    function newRoomName(event:  React.ChangeEvent<HTMLInputElement>) {
-    setRoomName(event.target.value)
-    dispatch(changeRoomName(event.target.value))
-  }
+
   function newLoginUser(event:  React.ChangeEvent<HTMLInputElement>) {
     setLoginUser(event.target.value)
     dispatch(changeLoginUser(event.target.value))
@@ -31,8 +26,6 @@ export default function LoginsForm() {
       autoComplete="off"
     >
       <TextField id="outlined-basic" label='Login' value={loginUser} onChange={newLoginUser} variant="outlined"/>
-      <TextField id="outlined-basic" label='Room' variant="outlined" onChange={ newRoomName } value={ roomName }
-      />
     </Box>
   );
 }
