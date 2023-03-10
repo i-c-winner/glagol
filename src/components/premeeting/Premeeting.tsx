@@ -1,4 +1,4 @@
-import React, { useEffect, createRef, useState, ReactNode } from 'react'
+import React, { useEffect } from 'react'
 import './premeeting.scss'
 
 function Premeeting() {
